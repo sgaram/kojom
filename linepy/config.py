@@ -2,7 +2,7 @@
 from akad.ttypes import ApplicationType
 import re
 Ap_Header = ApplicationType._VALUES_TO_NAMES[304]
-Ap_Version = '8.11.0'
+Ap_Version = '8.10.2'
 class Config(object):
     LINE_HOST_DOMAIN            = 'https://gd2.line.naver.jp'
     LINE_OBS_DOMAIN             = 'https://obs-sg.line-apps.com'
@@ -32,7 +32,7 @@ class Config(object):
     APP_TYPE    = Ap_Header
     APP_VER     = Ap_Version
     CARRIER     = '51089, 1-0'
-    SYSTEM_NAME = 'PrankBots'
+    SYSTEM_NAME = 'SEPRI'
     SYSTEM_VER  = '8.22.17'
     IP_ADDR     = '8.8.8.8'
     EMAIL_REGEX = re.compile(r"[^@]+@[^@]+\.[^@]+")
