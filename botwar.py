@@ -6,13 +6,13 @@ import time,random,sys,json,codecs,threading,glob,re,os,subprocess,asyncio
 from datetime import datetime, timedelta
 from time import sleep
 from humanfriendly import format_timespan, format_size, format_number, format_length
-import time, random, sys, json, codecs, threading, glob, re, string, os, requests, subprocess, six, ast, urllib, urllib.parse
+import time, random, sys, json, codecs, pytz, threading, glob, re, string, os, requests, subprocess, six, ast, urllib, urllib.parse
 _session = requests.session()
 botStart = time.time()
 settings = {
-    "line": "TOKEN SB",
-    "pb1": "TOKEN KICKER 1",
-    "pb2": "TOKEN KICKER 2",
+    "line": "Ex5UYH4M7TrRydqhf4Rd.tLlReCirgG96uB+Q5pwO+q.2xUEMb2E1xclSPGbrBqd9r/OZZ60pa5CPFgj4gvglT8=",
+    "pb1": "Ex1Kkk8tDFSvmAJTzxad.4ewRNrGM7sVk/ZrcI2TjRq.OGIjo1dbP+ush6ne4njPObx+e1QpmwBxEXMt+jiR7Sk=",
+    "pb2": "Ex1Kkk8tDFSvmAJTzxad.4ewRNrGM7sVk/ZrcI2TjRq.OGIjo1dbP+ush6ne4njPObx+e1QpmwBxEXMt+jiR7Sk=",
     "kunci": False,
     "kata": "prank",
     "blacklist": {}
@@ -37,11 +37,11 @@ settings = {
     "kata": "prank",
     "blacklist": {}
 }
-Drop_Xv = "u5818cb4404411c2e2e6e6937d172cca8" #ID_DROPING_BOTS
-Xv_WIN = "udfaf52176415b46cb445ae2757ec85f3" #ID_WINDOWS_XP
-Xv_LAN = "u17a086ccff618e754588a1108335867f" #ID_SERVER_LAN
-Xv_Servic = "ub0842532a31b9d99856cf2590b17d33f" #ID_PROV_SERVICE
-Xv_DxD = "uc8dc5352066b6a344bde3c07b0fe04ea" #ID_SYSTEM_BOTS
+Drop_Xv = "u9f09cfcb17d037e2936b751bd9d40ead" #ID_DROPING_BOTS
+Xv_WIN = "u7aac4f9ae0330775b6f3e8b5ddc0f058" #ID_WINDOWS_XP
+Xv_LAN = "ud2fd60fc6e5401101a5f50118dd4118c" #ID_SERVER_LAN
+Xv_Servic = "u4f677fabc82a4b9aa2d40b9961fa5169" #ID_PROV_SERVICE
+Xv_DxD = "u61a9b5ce8de3eb51a859410c9834e5c8" #ID_SYSTEM_BOTS
 Line_Import = [Drop_Xv,Xv_WIN,Xv_LAN,Xv_Servic,Xv_DxD] #ALL_IMPORTING
 def restartBot():
     print ("[ INFO ] BOT RESETTED")
@@ -108,9 +108,9 @@ def bot(op):
                         return
                     else:
                         prankbot = command(text)
-                        if prankbot == "abouts":
-                            line.sendMessage(to,"|abouts Bot|\n|R _for respon\n|kikil _for kickall\n|kick @mention _for kick target\n|in _for bot join group\n|out _ for bot leave group\n|bye _for self leave group\n|banlist _for check blacklist user\n|clearban _for delete all blacklist\n|mybot _for send contact bot\n|backup _for backup bot")
-                        if prankbot == "backup":
+                        if prankbot == ".help":
+                            line.sendMessage(to,"|DELTA WAR BOT|\n|.respon\n|.bantai = kickall\n|.santet @ = kick\n|.masuk\n|.keluar = all kicker leave\n|.bye = self leave\n|.banlist \n|.clearban \n|.mybot \n|.delta = war mode~ backup")
+                        if prankbot == "delta":
                             try:
                                 line.findAndAddContactsByMid(pb1BOG)
                                 line.findAndAddContactsByMid(pb2BOG)
@@ -133,15 +133,15 @@ def bot(op):
                                 pb2.findAndAddContactsByMid(Xv_LAN)
                                 pb2.findAndAddContactsByMid(Xv_Servic)
                                 pb2.findAndAddContactsByMid(Xv_DxD)
-                                line.sendMessage(to,"succes.!!.\nready..")
+                                line.sendMessage(to,"DELTA READY\nWAR..")
                             except:
-                                line.sendMessage(to,"ready..")
-                        if prankbot == "in":
+                                line.sendMessage(to,"SET MODE WAR.")
+                        if prankbot == ".masuk":
                             anggota = [pb1BOG,pb2BOG]
                             line.inviteIntoGroup(msg.to, anggota)
                             pb1.acceptGroupInvitation(msg.to)
                             pb2.acceptGroupInvitation(msg.to)
-                        elif prankbot.startswith("kick "):
+                        elif prankbot.startswith("santet "):
                             if 'MENTION' in msg.contentMetadata.keys()!= None:
                                 names = re.findall(r'@(\w+)', text)
                                 mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -157,7 +157,7 @@ def bot(op):
                                     except:
                                         pb2.kickoutFromGroup(to,[ls])
                                         print (to,[ls])
-                        elif prankbot == "banlist":
+                        elif prankbot == ".banlist":
                                 if settings["blacklist"] == {}:
                                     line.sendMessage(to,"Tidak Ada kontak blacklist")
                                 else:
@@ -166,30 +166,30 @@ def bot(op):
                                     for i in settings["blacklist"]:
                                         h = line.getContact(i)
                                         line.sendContact(to,i)
-                        elif prankbot == "clearban":
+                        elif prankbot == ".clearban":
                             settings["blacklist"] = {}
                             line.sendMessage(to,"success.!!")
-                        elif prankbot == "mybots" or prankbot == "mybot":
+                        elif prankbot == ".mybot" or prankbot == ".mybots":
                             line.sendContact(to, myBOG)
                             line.sendContact(to, pb1BOG)
                             line.sendContact(to, pb2BOG)
-                        elif prankbot == "r":
+                        elif prankbot == ".respon":
                             profile = pb1.getProfile()
-                            text = profile.displayName + "􀜁􀅔􏿿"
+                            text = profile.displayName + "TEAM DELTA WAR WAS HERE"
                             pb1.sendMessage(to, text)
                             profile = pb2.getProfile()
-                            text = profile.displayName + "􀜁􀅔􏿿"
+                            text = profile.displayName + "TEAM DELTA WAR WAS HERE"
                             pb2.sendMessage(to, text)
-                        elif prankbot == "bye":
+                        elif prankbot == ".bye":
                             pb1.leaveGroup(msg.to)
                             pb2.leaveGroup(msg.to)
-                            line.sendMessage(to,"====owner creator=====")
-                            line.sendContact(to, 'u0ac948397fbc732bd3bc5ca273faa698')
+                            line.sendMessage(to,"TEAM DELTA PROTECTION")
+                            line.sendContact(to, 'u9f09cfcb17d037e2936b751bd9d40ead')
                             line.leaveGroup(msg.to)
-                        elif prankbot == "out":
+                        elif prankbot == ".keluar":
                             pb1.leaveGroup(msg.to)
                             pb2.leaveGroup(msg.to)
-                        elif prankbot == "kikil":
+                        elif prankbot == ".bantai":
                             if msg.toType == 2:
                                 gs = line.getGroup(msg.to)
                                 gs = pb1.getGroup(msg.to)
@@ -200,7 +200,7 @@ def bot(op):
                                     if _name in g.displayName:
                                         targets.append(g.mid)
                                 if targets == []:
-                                    line.sendMessage(to,"LIMIT.!!!")
+                                    line.sendMessage(to,"LIMIT PLEASE PM MY CREATOR, SEPRI.!!!")
                                 else:
                                      for target in targets:
                                          if not target in Bots:
