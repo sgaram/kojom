@@ -10,9 +10,9 @@ import time, random, sys, json, codecs, pytz, threading, glob, re, string, os, r
 _session = requests.session()
 botStart = time.time()
 settings = {
-    "line": "Ex5UYH4M7TrRydqhf4Rd.tLlReCirgG96uB+Q5pwO+q.2xUEMb2E1xclSPGbrBqd9r/OZZ60pa5CPFgj4gvglT8=",
-    "pb1": "Ex1Kkk8tDFSvmAJTzxad.4ewRNrGM7sVk/ZrcI2TjRq.OGIjo1dbP+ush6ne4njPObx+e1QpmwBxEXMt+jiR7Sk=",
-    "pb2": "Ex1Kkk8tDFSvmAJTzxad.4ewRNrGM7sVk/ZrcI2TjRq.OGIjo1dbP+ush6ne4njPObx+e1QpmwBxEXMt+jiR7Sk=",
+    "line": "ExrdygY9U7qKKJ1vHYC8.EQXpMUaZb3w28/I13CdWwa.88Sor93ThzoFdZxX3phspCLyF/9J0rsjd6wEb5mkVE0=",
+    "pb1": "Exm8OaBbo9kfwVV7xRv2.QEypYlM3WeUgKi02bP5YqG.PWOrVlfSkPHUPnhGSW+Bpxq/QPsMvblEhnDVed4NVnQ=",
+    "pb2": "ExaNLLyPH98kqAGQNMq8.ZuSpc+nKtDACQJm5owiUca.bGaXHj7B/ZjDYylW5O3AM1kOBct5tfKlqhm0mCxutm0=",
     "kunci": False,
     "kata": "prank",
     "blacklist": {}
@@ -109,8 +109,8 @@ def bot(op):
                     else:
                         prankbot = command(text)
                         if prankbot == ".help":
-                            line.sendMessage(to,"|DELTA WAR BOT|\n|.respon\n|.bantai = kickall\n|.santet @ = kick\n|.masuk\n|.keluar = all kicker leave\n|.bye = self leave\n|.banlist \n|.clearban \n|.mybot \n|.delta = war mode~ backup")
-                        if prankbot == "delta":
+                            line.sendMessage(to,"|LEO STAY|\n|.respon\n|.not respon = kickall\n|.santet @ = kick\n|.masuk\n|.keluar = all kicker leave\n|.bye = self leave\n|.banlist \n|.clearban \n|.mybot \n|.delta = war mode~ backup")
+                        if prankbot == ".leo":
                             try:
                                 line.findAndAddContactsByMid(pb1BOG)
                                 line.findAndAddContactsByMid(pb2BOG)
@@ -133,7 +133,7 @@ def bot(op):
                                 pb2.findAndAddContactsByMid(Xv_LAN)
                                 pb2.findAndAddContactsByMid(Xv_Servic)
                                 pb2.findAndAddContactsByMid(Xv_DxD)
-                                line.sendMessage(to,"DELTA READY\nWAR..")
+                                line.sendMessage(to,"LEO READY TO\nWAR..")
                             except:
                                 line.sendMessage(to,"SET MODE WAR.")
                         if prankbot == ".masuk":
