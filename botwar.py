@@ -10,9 +10,9 @@ import time, random, sys, json, codecs, pytz, threading, glob, re, string, os, r
 _session = requests.session()
 botStart = time.time()
 settings = {
-    "line": "ExrdygY9U7qKKJ1vHYC8.EQXpMUaZb3w28/I13CdWwa.88Sor93ThzoFdZxX3phspCLyF/9J0rsjd6wEb5mkVE0=",
-    "pb1": "Exm8OaBbo9kfwVV7xRv2.QEypYlM3WeUgKi02bP5YqG.PWOrVlfSkPHUPnhGSW+Bpxq/QPsMvblEhnDVed4NVnQ=",
-    "pb2": "ExaNLLyPH98kqAGQNMq8.ZuSpc+nKtDACQJm5owiUca.bGaXHj7B/ZjDYylW5O3AM1kOBct5tfKlqhm0mCxutm0=",
+    "line": "Exrdy1vH13CdWwa.88Sor93ThzoFdZxX3ph6wEb5mkVE0=",
+    "pb1": "Exm8OaBboM3WeUgKi02bP5YqG.PWOrVlfvblEhnDVed4NVnQ=",
+    "pb2": "ExaNLSpc+nKtDwiUca.bGaXHj7B/ZjDYtfKlqhm0mCxutm0=",
     "kunci": False,
     "kata": "prank",
     "blacklist": {}
