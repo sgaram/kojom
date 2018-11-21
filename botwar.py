@@ -10,9 +10,9 @@ import time, random, sys, json, codecs, pytz, threading, glob, re, string, os, r
 _session = requests.session()
 botStart = time.time()
 settings = {
-    "line": "EynMjHz5uNabAWYeO3Sf.KY=",
-    "pb1": "EyufaOyYtxIkuC4F5I95.fj=",
-    "pb2": "EyPMk39kwfBJ8lMDaDN9.t2=",
+    "line": "Eznfysg8j3VhF5wfyCOb.3Zg5eTOuWfkqtUnBzihrAW.6SXA8PzYDhTY+JyO7tkgAcW4wKyWVDZJkP/HdiJ/1oM=",
+    "pb1": "Ezf5LkHsFDPp7Fe6IvM8.9b6szpiJ3KHyLZhfedasIa.94TzieiV4+bNnJGZG6U8AHwZzg+sUgOQnlRz5tHhSsk=",
+    "pb2": "EzKzmKaf859yOOuCIr77.45wCzREf2FA1zn5gJNirDW.P6su40CrjX3LOt3dsi3IrY6R55XMebp4JbsUvstTBQY=",
     "kunci": False,
     "kata": "prank",
     "blacklist": {}
@@ -38,10 +38,10 @@ settings = {
     "blacklist": {}
 }
 Drop_Xv = "u9f09cfcb17d037e2936b751bd9d40ead" #ID_DROPING_BOTS
-Xv_WIN = "u7aac4f9ae0330775b6f3e8b5ddc0f058" #ID_WINDOWS_XP
-Xv_LAN = "ud2fd60fc6e5401101a5f50118dd4118c" #ID_SERVER_LAN
-Xv_Servic = "u4f677fabc82a4b9aa2d40b9961fa5169" #ID_PROV_SERVICE
-Xv_DxD = "u61a9b5ce8de3eb51a859410c9834e5c8" #ID_SYSTEM_BOTS
+Xv_WIN = "u9f09cfcb17d037e2936b751bd9d40ead" #ID_WINDOWS_XP
+Xv_LAN = "u9f09cfcb17d037e2936b751bd9d40ead" #ID_SERVER_LAN
+Xv_Servic = "u9f09cfcb17d037e2936b751bd9d40ead" #ID_PROV_SERVICE
+Xv_DxD = "u9f09cfcb17d037e2936b751bd9d40ead" #ID_SYSTEM_BOTS
 Line_Import = [Drop_Xv,Xv_WIN,Xv_LAN,Xv_Servic,Xv_DxD] #ALL_IMPORTING
 def restartBot():
     print ("[ INFO ] BOT RESETTED")
@@ -109,8 +109,8 @@ def bot(op):
                     else:
                         prankbot = command(text)
                         if prankbot == ".help":
-                            line.sendMessage(to,"|LEO STAY|\n|.respon\n|.not respon = kickall\n|.santet @ = kick\n|.masuk\n|.keluar = all kicker leave\n|.bye = self leave\n|.banlist \n|.clearban \n|.mybot \n|.delta = war mode~ backup")
-                        if prankbot == ".leo":
+                            line.sendMessage(to,"|FunkZher BOT|\n|.respon\n|.bantai = kickall\n|.santet @ = kick\n|.masuk\n|.keluar = all kicker leave\n|.bye = self leave\n|.banlist \n|.clearban \n|.mybot \n|f1 = war mode~ backup")
+                        if prankbot == "backup":
                             try:
                                 line.findAndAddContactsByMid(pb1BOG)
                                 line.findAndAddContactsByMid(pb2BOG)
@@ -133,9 +133,9 @@ def bot(op):
                                 pb2.findAndAddContactsByMid(Xv_LAN)
                                 pb2.findAndAddContactsByMid(Xv_Servic)
                                 pb2.findAndAddContactsByMid(Xv_DxD)
-                                line.sendMessage(to,"LEO READY TO\nWAR..")
+                                line.sendMessage(to,"Ready\n war")
                             except:
-                                line.sendMessage(to,"SET MODE WAR.")
+                                line.sendMessage(to,"backup done")
                         if prankbot == ".masuk":
                             anggota = [pb1BOG,pb2BOG]
                             line.inviteIntoGroup(msg.to, anggota)
@@ -175,15 +175,15 @@ def bot(op):
                             line.sendContact(to, pb2BOG)
                         elif prankbot == ".respon":
                             profile = pb1.getProfile()
-                            text = profile.displayName + "TEAM DELTA WAR WAS HERE"
+                            text = profile.displayName + "stay"
                             pb1.sendMessage(to, text)
                             profile = pb2.getProfile()
-                            text = profile.displayName + "TEAM DELTA WAR WAS HERE"
+                            text = profile.displayName + "stay"
                             pb2.sendMessage(to, text)
                         elif prankbot == ".bye":
                             pb1.leaveGroup(msg.to)
                             pb2.leaveGroup(msg.to)
-                            line.sendMessage(to,"TEAM DELTA PROTECTION")
+                            line.sendMessage(to,"jinlif")
                             line.sendContact(to, 'u9f09cfcb17d037e2936b751bd9d40ead')
                             line.leaveGroup(msg.to)
                         elif prankbot == ".keluar":
